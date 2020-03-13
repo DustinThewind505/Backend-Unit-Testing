@@ -1,14 +1,13 @@
-import React from "react";
-// Find file for ColorPicker, export default means you can use
-// any name of the component. Convention is the name of the component
-import ColorPicker from "./components/ColorComponents/ColorPicker";
+import React from "react"
 
 import "./styles.css";
-// use JavaScript modules to export and import components
+import ToDoConatainer from "./components/ToDoContainer";
+
 function App() {
   return (
     <div className="counter">
-      <ColorPicker />
+      <h1>Ello Poppet</h1>
+      <ToDoConatainer />
     </div>
   );
 }

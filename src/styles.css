@@ -14,13 +14,13 @@ body {
   background: #263650;
   color: #fff;
   padding: 10px;
-  width: 300px;
+  width: 100%;
   min-height: 350px;
   border-radius: 4px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  display: grid;
-  grid-template-rows: 150px 1fr;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 span {
   color: #be9c38;
