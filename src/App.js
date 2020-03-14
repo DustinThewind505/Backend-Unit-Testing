@@ -3,7 +3,7 @@ import React, { Fragment } from "react"
 import "./styles.css";
 import ToDoConatainer from "./components/ToDoContainer";
 
-const Tasks = [
+const originalTasks = [
   {
     name: "Wake",
     id: 123,
@@ -40,17 +40,54 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      message: ""
+      Tasks: originalTasks
     }
   }
 
+ handleClick = () => console.log("click", this.state.Tasks);
+
+  // toggleTask = clickedId => {
+  //   const newTask = this.state.Tasks.map(element => {
+  //     if(element.id === clickedId){
+  //       return{
+  //         ...element,
+  //         complete: !element.complete
+  //       }
+  //     } else {
+  //       return element;
+  //     }
+  //   })
+
+  //   this.setState({
+  //     Tasks: newTask
+  //   })
+
+  toggleTask = clickedId => {
+    console.log(clickedId);
+    this.setState({
+      Tasks: this.state.Tasks.map(element => {
+        if (element.id === clickedId) {
+          return {
+            ...element,
+            complete: !element.complete
+          };
+        }
+        return element;
+      })
+    });
+  };
+  
+
+
+
   render() {
+    console.log("render", this.state.Tasks)
     return (
       <Fragment>
         To Do List
         <div className="counter">
           <h1>Ello Poppet</h1>
-          <ToDoConatainer tasks={Tasks}/>
+          <ToDoConatainer tasks={this.state.Tasks} handleClick={this.handleClick} toggleTask={this.toggleTask}/>
         </div>
       </Fragment>
     );
