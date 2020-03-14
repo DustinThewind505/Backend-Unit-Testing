@@ -1,5 +1,23 @@
-import React from "react"
+import React, { Fragment } from "react"
 
-const Form = () => <h4>Ello Poppet</h4>
+class Form extends React.Component {
+    constructor(){
+        super();
+        this.state  = {
+
+        }
+    }
+
+    render() {
+        return (
+            <Fragment>
+                <input placeholder="Ello Poppet" onChange={() => { }} />
+                <button>
+                    Add
+                </button>
+            </Fragment>
+        )
+    }
+}
 
 export default Form;

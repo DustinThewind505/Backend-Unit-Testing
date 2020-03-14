@@ -46,6 +46,12 @@ class App extends React.Component {
 
  handleClick = () => console.log("click", this.state.Tasks);
 
+
+handleChange = event => {
+  
+}
+
+
   // toggleTask = clickedId => {
   //   const newTask = this.state.Tasks.map(element => {
   //     if(element.id === clickedId){
@@ -81,7 +87,7 @@ class App extends React.Component {
 
 
   render() {
-    console.log("render", this.state.Tasks)
+    // console.log("render", this.state.Tasks)
     return (
       <Fragment>
         To Do List

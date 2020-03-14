@@ -7,14 +7,13 @@ const ToDoConatainer = props => {
 
     return (
         <div>
+            <Form />
             {props.tasks.map(task => (
                 <ToDo key={task.id} task={task} toggleTask={props.toggleTask}/>
             ))}
-            <button onClick={props.handleClick}>
+            <button onClick={() => console.log("Meow")}>
                 Clear Tasks
             </button>
-
-            <Form />
         </div>
     )
 };
