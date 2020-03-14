@@ -4,14 +4,21 @@ class Form extends React.Component {
     constructor(){
         super();
         this.state  = {
-
+            newTask: '',
         }
     }
+
+    handleChange = event => {
+        console.log(event.target.value);
+        this.setState({
+            newTask: event.target.value
+        })
+      }
 
     render() {
         return (
             <Fragment>
-                <input placeholder="Ello Poppet" onChange={() => { }} />
+                <input placeholder="Ello Poppet" onChange={() => { }} value={this.state.newTask} onChange={this.handleChange} />
                 <button>
                     Add
                 </button>

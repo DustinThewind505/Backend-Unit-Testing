@@ -46,12 +46,6 @@ class App extends React.Component {
 
  handleClick = () => console.log("click", this.state.Tasks);
 
-
-handleChange = event => {
-  
-}
-
-
   // toggleTask = clickedId => {
   //   const newTask = this.state.Tasks.map(element => {
   //     if(element.id === clickedId){
