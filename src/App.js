@@ -76,6 +76,18 @@ class App extends React.Component {
       })
     });
   };
+
+  addNewTask = str => {
+    const newTask = {
+      name: str,
+      id: Date.now(),
+      complete: false
+    }
+
+    this.setState({
+      Tasks: [...originalTasks, newTask]
+    })
+  }
   
 
 
@@ -87,7 +99,7 @@ class App extends React.Component {
         To Do List
         <div className="counter">
           <h1>Ello Poppet</h1>
-          <ToDoConatainer tasks={this.state.Tasks} handleClick={this.handleClick} toggleTask={this.toggleTask}/>
+          <ToDoConatainer tasks={this.state.Tasks} handleClick={this.handleClick} toggleTask={this.toggleTask} addNewTask={this.addNewTask}/>
         </div>
       </Fragment>
     );

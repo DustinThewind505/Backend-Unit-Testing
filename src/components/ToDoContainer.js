@@ -7,7 +7,7 @@ const ToDoConatainer = props => {
 
     return (
         <div>
-            <Form />
+            <Form addNewTask={props.addNewTask}/>
             {props.tasks.map(task => (
                 <ToDo key={task.id} task={task} toggleTask={props.toggleTask}/>
             ))}

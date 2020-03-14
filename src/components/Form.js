@@ -1,9 +1,9 @@
 import React, { Fragment } from "react"
 
 class Form extends React.Component {
-    constructor(){
+    constructor() {
         super();
-        this.state  = {
+        this.state = {
             newTask: '',
         }
     }
@@ -13,15 +13,23 @@ class Form extends React.Component {
         this.setState({
             newTask: event.target.value
         })
-      }
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        this.props.addNewTask(this.state.newTask)
+    }
 
     render() {
         return (
             <Fragment>
-                <input placeholder="Ello Poppet" onChange={() => { }} value={this.state.newTask} onChange={this.handleChange} />
-                <button>
-                    Add
+                <form onSubmit={this.handleSubmit}>
+                    <input placeholder="Ello Poppet" onChange={() => { }} value={this.state.newTask} onChange={this.handleChange} />
+                    <button>
+                        Add
                 </button>
+                    <h1>Ello Poppet: {this.state.newTask}</h1>
+                </form>
             </Fragment>
         )
     }
