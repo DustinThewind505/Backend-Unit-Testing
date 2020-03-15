@@ -102,7 +102,7 @@ class App extends React.Component {
     // console.log("render", this.state.Tasks)
     return (
       <Fragment>
-        To Do List
+        <h1>To Do List</h1>
         <div className="counter">
           <ToDoConatainer tasks={this.state.Tasks} clearComplete={this.clearComplete} toggleTask={this.toggleTask} addNewTask={this.addNewTask}/>
         </div>
