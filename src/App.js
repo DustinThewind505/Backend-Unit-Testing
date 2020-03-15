@@ -44,7 +44,7 @@ class App extends React.Component {
     }
   }
 
- handleClick = () => console.log("click", this.state.Tasks);
+ //handleClick = () => console.log("click", this.state.Tasks);
 
   // toggleTask = clickedId => {
   //   const newTask = this.state.Tasks.map(element => {
@@ -89,7 +89,9 @@ class App extends React.Component {
     })
   }
   
-
+  clearComplete = () => {
+    console.log("CLEAR!")
+  }
 
 
   render() {
@@ -99,7 +101,7 @@ class App extends React.Component {
         To Do List
         <div className="counter">
           <h1>Ello Poppet</h1>
-          <ToDoConatainer tasks={this.state.Tasks} handleClick={this.handleClick} toggleTask={this.toggleTask} addNewTask={this.addNewTask}/>
+          <ToDoConatainer tasks={this.state.Tasks} clearComplete={this.clearComplete} toggleTask={this.toggleTask} addNewTask={this.addNewTask}/>
         </div>
       </Fragment>
     );

@@ -11,7 +11,7 @@ const ToDoConatainer = props => {
             {props.tasks.map(task => (
                 <ToDo key={task.id} task={task} toggleTask={props.toggleTask}/>
             ))}
-            <button onClick={() => console.log("Meow")}>
+            <button onClick={props.clearComplete}>
                 Clear Tasks
             </button>
         </div>
