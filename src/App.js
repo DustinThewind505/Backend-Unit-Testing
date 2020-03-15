@@ -5,19 +5,19 @@ import ToDoConatainer from "./components/ToDoContainer";
 
 const originalTasks = [
   {
-    name: "Wake",
+    name: "Study",
     id: 123,
-    complete: true
+    complete: false
   },
   {
-    name: "Bake",
+    name: "Walk",
     id: 124,
-    complete: true
+    complete: false
   },
   {
-    name: "Eat",
+    name: "Second Study",
     id: 1235,
-    complete: true
+    complete: false
   },
   {
     name: "Fetch",
@@ -25,12 +25,12 @@ const originalTasks = [
     complete: false
   },
   {
-    name: "Second Bake",
+    name: "Drink Water",
     id: 1237,
     complete: false
   },
   {
-    name: "Third Bake",
+    name: "Build",
     id: 1248,
     complete: false
   }
@@ -84,6 +84,8 @@ class App extends React.Component {
       complete: false
     }
 
+    // this.state.Tasks.push(newTask) doesn't work
+
     this.setState({
       Tasks: [...originalTasks, newTask]
     })
@@ -104,7 +106,6 @@ class App extends React.Component {
       <Fragment>
         To Do List
         <div className="counter">
-          <h1>Ello Poppet</h1>
           <ToDoConatainer tasks={this.state.Tasks} clearComplete={this.clearComplete} toggleTask={this.toggleTask} addNewTask={this.addNewTask}/>
         </div>
       </Fragment>

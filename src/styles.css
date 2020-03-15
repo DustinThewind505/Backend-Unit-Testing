@@ -51,3 +51,7 @@ button:hover {
   background-color: #d17d7c;
   text-decoration: line-through;
 }
+
+input {
+  height: 30px;
+}

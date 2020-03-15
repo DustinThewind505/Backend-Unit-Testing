@@ -18,6 +18,9 @@ class Form extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.addNewTask(this.state.newTask)
+        this.setState({
+            newTask: ''
+        })
     }
 
     render() {
@@ -28,7 +31,7 @@ class Form extends React.Component {
                     <button>
                         Add
                 </button>
-                    <h1>Ello Poppet: {this.state.newTask}</h1>
+                    <h6>{this.state.newTask}</h6>
                 </form>
             </Fragment>
         )
