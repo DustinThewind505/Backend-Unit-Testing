@@ -91,6 +91,10 @@ class App extends React.Component {
   
   clearComplete = () => {
     console.log("CLEAR!")
+    this.setState({
+      Tasks: this.state.Tasks.filter(element => {
+      return !element.complete
+    })})
   }
 
 
