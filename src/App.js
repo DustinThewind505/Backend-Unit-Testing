@@ -84,10 +84,8 @@ class App extends React.Component {
       complete: false
     }
 
-    // this.state.Tasks.push(newTask) doesn't work
-
     this.setState({
-      Tasks: [...originalTasks, newTask]
+      Tasks: [...this.state.Tasks, newTask]
     })
   }
   
