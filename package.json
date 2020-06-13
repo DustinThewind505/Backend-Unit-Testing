@@ -1,0 +1,23 @@
+{
+  "name": "REACT-button-picker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DustinThewind505/REACT-button-picker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DustinThewind505/REACT-button-picker/issues"
+  },
+  "homepage": "https://github.com/DustinThewind505/REACT-button-picker#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
