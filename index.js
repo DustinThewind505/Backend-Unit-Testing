@@ -1,4 +1,4 @@
-module.exports = {userFunction, averageTestScore };
+module.exports = {userFunction, averageTestScore};
 // ============== TO BE TESTED ==============
 
 function userFunction() {
@@ -16,3 +16,4 @@ const averageTestScore = testScores => {
   
     return totalSumScores / numberOfScore;
   };
+
