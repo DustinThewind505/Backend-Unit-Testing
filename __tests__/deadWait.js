@@ -1,4 +1,5 @@
 const { add } = require('../calculator/calculator');
+const averageScore = require('../mathHelper/mathHelper');
 
 
 
@@ -8,13 +9,9 @@ describe("all tests", () => {
         expect(true).toBeTruthy()
     })
 
-    describe("user OBJ", () => {
-        it("Expect name to be Cyclops", () => {
-            const user = {
-                name: "Cyclops"
-            }
-            expect(user.name).toBe("Cyclops");
-        });
+    describe("the average score", () => {
+        it.todo(": should return the average of an array of numbers");
+        it.todo(": scores throw and error if data is not an array");
     })
 
     describe("the calculator", () => {
@@ -89,6 +86,6 @@ describe("all tests", () => {
             }).toThrow();
         })
 
-        it.todo("make more tests");
+        it.todo(": make more tests");
     })
 })
