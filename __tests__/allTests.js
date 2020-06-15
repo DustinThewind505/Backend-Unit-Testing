@@ -1,5 +1,5 @@
-const { add } = require('../calculator/calculator');
-const { theArray, averageSum } = require('../mathHelper/mathHelper');
+const { add } = require('../functions/calculator/calculator');
+const { checkIfArray, averageSum, moreThan50k } = require('../functions/mathHelper/mathHelper');
 
 
 
@@ -10,32 +10,50 @@ describe("all tests", () => {
     })
 
     describe("the average score", () => {
+        const scoresArr = [2, 2, 4, 6, 6];
+
         it(": should return the average of an array of numbers", () => {
             let scores = [2, 2, 4, 6, 6];
 
             expect(averageSum(scores)).toBe(4);
         });
         it(": should throw an error if data type is not an array", () => {
-            let scoresArr = [2, 2, 4, 6, 6]; // <--------- Should be the only true edge case
-            let scoresOBJ = { 2:2, 2:2, 4:4, 6:6, 6:6 }
-            let scoresString = "2, 2, 4, 6, 6";
-            let scoresNaN = NaN;
-            let scoresUndefined = undefined;
-            let scoresNull = null;
-            expect(theArray(scoresArr)).toBeTruthy();
-            expect(theArray(scoresOBJ)).toBeFalsy();
-            expect(theArray(scoresString)).toBeFalsy();
-            expect(theArray(scoresNaN)).toBeFalsy();
-            expect(theArray(scoresUndefined)).toBeFalsy();
-            expect(theArray(scoresNull)).toBeFalsy();
+            const scoresOBJ = { 2: 2, 2: 2, 4: 4, 6: 6, 6: 6 }
+            const scoresString = "2, 2, 4, 6, 6";
+            const scoresNaN = NaN;
+            const scoresUndefined = undefined;
+            const scoresNull = null;
+            expect(checkIfArray(scoresArr)).toBeTruthy(); // <--------- Should be the only true edge case
+            expect(checkIfArray(scoresOBJ)).toBeFalsy();
+            expect(checkIfArray(scoresString)).toBeFalsy();
+            expect(checkIfArray(scoresNaN)).toBeFalsy();
+            expect(checkIfArray(scoresUndefined)).toBeFalsy();
+            expect(checkIfArray(scoresNull)).toBeFalsy();
         });
     })
 
     describe("salaries over $50k", () => {
-        it.todo(": should return salaries $50k and higher");
+        let salariesArr = [4000, 50005, 7500, 90000, 30000];
+
+        it(": should return salaries $50k and higher", () => {
+            const expected = [ 50005, 90000 ];
+            expect(moreThan50k(salariesArr)).toBe([ 50005, 90000 ]);
+        });
         it.todo(": should return only numbers");
         it.todo(": should return an empty array if no arguments are given");
-        it.todo(": should throw an error when the argument is not an array");
+        it(": should throw an error when the argument is not an array", () => {
+            const salariesOBJ = { 4000: 4000, 50005: 50005, 7500: 7500, 90000: 90000, 30000: 30000 }
+            const salariesString = "4000, 50005, 7500, 90000, 630000";
+            const salariesNaN = NaN;
+            const salariesUndefined = undefined;
+            const salariesNull = null;
+            expect(checkIfArray(salariesArr)).toBeTruthy(); // <--------- Should be the only true edge case
+            expect(checkIfArray(salariesOBJ)).toBeFalsy();
+            expect(checkIfArray(salariesString)).toBeFalsy();
+            expect(checkIfArray(salariesNaN)).toBeFalsy();
+            expect(checkIfArray(salariesUndefined)).toBeFalsy();
+            expect(checkIfArray(salariesNull)).toBeFalsy();
+        });
     })
 
     describe("the calculator", () => {
@@ -45,7 +63,7 @@ describe("all tests", () => {
             expect(add(2, -2)).toBe(0);
             expect(add(0, 2)).toBe(2);
             expect(add(0, 0)).toBe(0);
-        
+
         })
 
         it(": should return 0 if no arguments are given", () => {
