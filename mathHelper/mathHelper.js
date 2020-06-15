@@ -10,4 +10,10 @@ const averageSum = (arr) => {
     return totalSum / numberOfScores;
 }
 
-module.exports = averageSum;
+
+const theArray = arr => {
+    return Array.isArray(arr)
+}
+
+
+module.exports = {theArray, averageSum};

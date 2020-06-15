@@ -1,5 +1,5 @@
 const { add } = require('../calculator/calculator');
-const averageScore = require('../mathHelper/mathHelper');
+const { theArray, averageSum } = require('../mathHelper/mathHelper');
 
 
 
@@ -10,8 +10,25 @@ describe("all tests", () => {
     })
 
     describe("the average score", () => {
-        it.todo(": should return the average of an array of numbers");
-        it.todo(": scores throw and error if data is not an array");
+        it(": should return the average of an array of numbers", () => {
+            let scores = [2, 2, 4, 6, 6];
+
+            expect(averageSum(scores)).toBe(4);
+        });
+        it(": scores throw and error if data type is not an array", function() {
+            let scoresArr = [2, 2, 4, 6, 6]; // <--------- Should be the only true edge case
+            let scoresOBJ = { 2:2, 2:2, 4:4, 6:6, 6:6 }
+            let scoresString = "2, 2, 4, 6, 6";
+            let scoresNaN = NaN;
+            let scoresUndefined = undefined;
+            let scoresNull = null;
+            expect(theArray(scoresArr)).toBe(true);
+            expect(theArray(scoresOBJ)).toBe(false);
+            expect(theArray(scoresString)).toBe(false);
+            expect(theArray(scoresNaN)).toBe(false);
+            expect(theArray(scoresUndefined)).toBe(false);
+            expect(theArray(scoresNull)).toBe(false);
+        });
     })
 
     describe("the calculator", () => {
