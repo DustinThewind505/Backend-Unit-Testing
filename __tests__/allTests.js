@@ -1,7 +1,4 @@
-const { add } = require('../functions/calculator/calculator');
-const { checkIfArray, averageSum, moreThan50k } = require('../functions/mathHelper/mathHelper');
-
-
+const { add, averageSum, checkIfArray, moreThan50k } = require('../functions/functionsToBeTested');
 
 
 describe("all tests", () => {

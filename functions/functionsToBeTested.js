@@ -1,4 +1,12 @@
 // ======= functions to be tested =======
+function add(a = 0, b = 0){
+    if(isNumber(a) && isNumber(b)){
+        return a + b;
+    } else {
+        throw new Error("Both arguments need to be numbers")
+    }
+    
+}
 
 const averageSum = (arr) => {
     let totalSum = 0;
@@ -17,6 +25,10 @@ const checkIfArray = arr => {
     return Array.isArray(arr)
 }
 
+function isNumber(value){
+    return !isNaN(parseFloat(value)) && isFinite(value);
+}
+
 const moreThan50k = arr => {
     const newArray = []
 
@@ -29,4 +41,4 @@ const moreThan50k = arr => {
     return newArray;
 }
 
-module.exports = { checkIfArray, averageSum, moreThan50k };
+module.exports = { add, averageSum, checkIfArray, moreThan50k };
