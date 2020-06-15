@@ -5,7 +5,7 @@ const { theArray, averageSum } = require('../mathHelper/mathHelper');
 
 
 describe("all tests", () => {
-    it("should be running tests", function () {
+    it(": should be running tests", function () {
         expect(true).toBeTruthy()
     })
 
@@ -15,24 +15,31 @@ describe("all tests", () => {
 
             expect(averageSum(scores)).toBe(4);
         });
-        it(": scores throw and error if data type is not an array", function() {
+        it(": should throw an error if data type is not an array", () => {
             let scoresArr = [2, 2, 4, 6, 6]; // <--------- Should be the only true edge case
             let scoresOBJ = { 2:2, 2:2, 4:4, 6:6, 6:6 }
             let scoresString = "2, 2, 4, 6, 6";
             let scoresNaN = NaN;
             let scoresUndefined = undefined;
             let scoresNull = null;
-            expect(theArray(scoresArr)).toBe(true);
-            expect(theArray(scoresOBJ)).toBe(false);
-            expect(theArray(scoresString)).toBe(false);
-            expect(theArray(scoresNaN)).toBe(false);
-            expect(theArray(scoresUndefined)).toBe(false);
-            expect(theArray(scoresNull)).toBe(false);
+            expect(theArray(scoresArr)).toBeTruthy();
+            expect(theArray(scoresOBJ)).toBeFalsy();
+            expect(theArray(scoresString)).toBeFalsy();
+            expect(theArray(scoresNaN)).toBeFalsy();
+            expect(theArray(scoresUndefined)).toBeFalsy();
+            expect(theArray(scoresNull)).toBeFalsy();
         });
     })
 
+    describe("salaries over $50k", () => {
+        it.todo(": should return salaries $50k and higher");
+        it.todo(": should return only numbers");
+        it.todo(": should return an empty array if no arguments are given");
+        it.todo(": should throw an error when the argument is not an array");
+    })
+
     describe("the calculator", () => {
-        it("returns the sum of two given numbers", function () {
+        it(": should return the sum of two given numbers", () => {
             expect(add(2, 2)).toBe(4);
             expect(add(-2, -2)).toBe(-4);
             expect(add(2, -2)).toBe(0);
@@ -41,17 +48,17 @@ describe("all tests", () => {
         
         })
 
-        it("returns 0 if no numbers are given", function(){
+        it(": should return 0 if no arguments are given", () => {
             expect(add()).toBe(0);
         })
 
-        it("should return the value of the argument when only one number is given", function(){
+        it(": should return the value of the argument when only one number is given", () => {
             expect(add(0)).toBe(0);
             expect(add(2)).toBe(2);
             expect(add(undefined, 2)).toBe(2);
         })
 
-        it("should return an error when arguments are not numbers", function(){
+        it(": should throw an error if arguments are not numbers", () => {
             expect(() => {
                 add({}, {})
             }).toThrow();
